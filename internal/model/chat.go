@@ -19,10 +19,3 @@ type ChatLogs struct {
 	Emergency    bool
 	UniversityID int64
 }
-
-type BookingData struct {
-	Nama         sql.NullString
-	Nim          sql.NullString
-	Schedule     time.Time
-	UniversityID int64
-}

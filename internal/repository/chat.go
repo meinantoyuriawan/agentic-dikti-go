@@ -8,15 +8,31 @@ import (
 const (
 	selectChatBySessionidQuery = `SELECT s.role, s.chatinput FROM chat_logs s WHERE s.sessionid = $1 ORDER BY timestamp DESC LIMIT 10`
 	insertChatQuery            = `INSERT INTO chat_logs (sessionid, chatid, chatinput, timestamp, role, emergency, universityid) VALUES ($1, $2, $3, $4, $5, $6, $7)`
-	insertBookingData          = `INSERT INTO counseling_bookings (nama, nim, schedule, universityid) VALUES ($1, $2, $3, $4)`
 )
 
-func (q *Queries) SelectChatBySessionid(ctx context.Context, sessionId string) (res model.ChatHistory, err error) {
-	err = q.db.QueryRowContext(ctx, selectChatBySessionidQuery, sessionId).Scan(&res.Role, &res.ChatInput)
+func (q *Queries) SelectChatBySessionid(ctx context.Context, sessionId string) (res []model.ChatHistory, err error) {
+	rows, err := q.db.QueryContext(ctx, selectChatBySessionidQuery, sessionId)
+
+	// Scan(&res.Role, &res.ChatInput)
 	if err != nil {
-		return model.ChatHistory{}, err
+		return []model.ChatHistory{}, err
 	}
-	return res, nil
+	defer rows.Close()
+
+	var chats []model.ChatHistory
+
+	// Loop through rows, using Scan to assign column data to struct fields.
+	for rows.Next() {
+		var chat model.ChatHistory
+		if err := rows.Scan(&chat.Role, &chat.ChatInput); err != nil {
+			return chats, err
+		}
+		chats = append(chats, chat)
+	}
+	if err = rows.Err(); err != nil {
+		return chats, err
+	}
+	return chats, nil
 }
 
 func (q *Queries) InsertChat(ctx context.Context, userLog model.ChatLogs, aiLog model.ChatLogs) (err error) {
@@ -69,19 +85,5 @@ func (q *Queries) InsertChat(ctx context.Context, userLog model.ChatLogs, aiLog 
 		return err
 	}
 
-	return nil
-}
-
-func (q *Queries) InsertBooking(ctx context.Context, userBookData model.BookingData) (err error) {
-	err = q.db.QueryRowContext(ctx, insertBookingData,
-		userBookData.Nama,
-		userBookData.Nim,
-		userBookData.Schedule,
-		userBookData.UniversityID,
-	).Scan()
-
-	if err != nil {
-		return err
-	}
 	return nil
 }
