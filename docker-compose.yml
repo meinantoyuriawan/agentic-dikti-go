@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    container_name: psql_dikti
+    environment:
+      POSTGRES_DB: dikti
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - psql_volume:/var/lib/postgresql/sprint/data
+
+volumes:
+  psql_volume:
