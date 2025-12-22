@@ -3,8 +3,10 @@ package service
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/tmc/langchaingo/agents"
 	"github.com/tmc/langchaingo/llms/ollama"
@@ -19,15 +21,47 @@ func (s *Service) RunAgent(ctx context.Context, conversationString, userQuestion
 		return "", err
 	}
 	messages := createLLMInputMessage(conversationString, userQuestion)
+	fmt.Println(messages)
 	executor := agents.NewExecutor(agent)
+
 	result, err := executor.Call(ctx, map[string]any{
 		"input": messages,
 	})
 
-	fmt.Println("Final Output:")
+	if err != nil {
+		return "", err
+	}
+
+	// error handling
+
 	fmt.Println(result["output"])
-	bytes, _ := json.Marshal(result)
-	return string(bytes), nil
+	raw := result["output"].(string)
+
+	return raw, nil
+}
+
+type AgentOutput struct {
+	Response  string `json:"response"`
+	Emergency bool   `json:"emergency"`
+}
+
+func ParseAgentFinalAnswer(raw string) (*AgentOutput, error) {
+	if !strings.HasPrefix(raw, "{") || !strings.HasSuffix(raw, "}") {
+		return nil, errors.New("final answer does not contain valid JSON object")
+	}
+
+	// 4. Unmarshal
+	var out AgentOutput
+	if err := json.Unmarshal([]byte(raw), &out); err != nil {
+		return nil, err
+	}
+
+	// 5. Validate required fields
+	if out.Response == "" {
+		return nil, errors.New("missing or empty 'response' field")
+	}
+
+	return &out, nil
 }
 
 func createLLMInputMessage(conversationString, userQuestion string) string {
@@ -35,13 +69,14 @@ func createLLMInputMessage(conversationString, userQuestion string) string {
 	Conversation History : 
 	%s
 
-	Question: User: %s
+	Question: 
+	User: %s
 	`, conversationString, userQuestion)
 	return messages
 }
 
 func createPrompt() (prompts.PromptTemplate, error) {
-	content, err := os.ReadFile("prompt.txt")
+	content, err := os.ReadFile("internal/service/prompt.txt")
 	if err != nil {
 		return prompts.NewPromptTemplate(``, []string{}), err
 	}
@@ -53,7 +88,7 @@ func createPrompt() (prompts.PromptTemplate, error) {
 	return prompt, nil
 }
 
-func initAgent() (*agents.OneShotZeroAgent, error) {
+func initAgent() (*agents.OpenAIFunctionsAgent, error) {
 	agentTools := []tools.Tool{
 		GeneralFAQ{},
 		PsychSchedule{},
@@ -61,8 +96,8 @@ func initAgent() (*agents.OneShotZeroAgent, error) {
 	}
 
 	llm, err := ollama.New(
-		ollama.WithServerURL("http://custom-server:11434"),
-		ollama.WithModel("codellama"),
+		ollama.WithServerURL("http://8.215.1.191:11434/"),
+		ollama.WithModel("gpt-oss:20b"),
 	)
 	if err != nil {
 		fmt.Println("Error loading ollama")
@@ -75,10 +110,17 @@ func initAgent() (*agents.OneShotZeroAgent, error) {
 		return nil, err
 	}
 
-	agent := agents.NewOneShotAgent(
+	agent := agents.NewOpenAIFunctionsAgent(
 		llm,
 		agentTools,
 		agents.WithPrompt(prompt),
 	)
+
+	// agent := agents.NewOneShotAgent(
+	// 	llm,
+	// 	agentTools,
+	// 	agents.WithPrompt(prompt),
+	// 	agents.WithMaxIterations(3),
+	// )
 	return agent, nil
 }
