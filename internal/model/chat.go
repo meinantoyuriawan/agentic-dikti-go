@@ -11,11 +11,10 @@ type ChatHistory struct {
 }
 
 type ChatLogs struct {
-	SessionID    sql.NullString
-	ChatID       sql.NullString
-	ChatInput    sql.NullString
+	SessionID    string
+	ChatInput    string
 	Timestamp    time.Time
-	Role         sql.NullString
+	Role         string
 	Emergency    bool
-	UniversityID int64
+	UniversityID int
 }

@@ -24,12 +24,12 @@ func (s *Service) GetChatHistory(ctx context.Context, sessionId string) (chat []
 	return chats, err
 }
 
-func (s *Service) InputChat(ctx context.Context, userLog model.ChatLogs, aiLog model.ChatLogs) (err error) {
-	err = s.repository.InsertChat(ctx, userLog, aiLog)
+func (s *Service) InputChat(ctx context.Context, userLog model.ChatLogs, aiLog model.ChatLogs) (chatId string, err error) {
+	chatId, err = s.repository.InsertChat(ctx, userLog, aiLog)
 
 	if err != nil {
-		return constants.ErrChatInput
+		return "", constants.ErrChatInput
 	}
 
-	return nil
+	return chatId, nil
 }

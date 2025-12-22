@@ -3,11 +3,13 @@ package repository
 import (
 	"AgenticDikti/internal/model"
 	"context"
+	"fmt"
 )
 
 const (
 	selectChatBySessionidQuery = `SELECT s.role, s.chatinput FROM chat_logs s WHERE s.sessionid = $1 ORDER BY timestamp DESC LIMIT 10`
-	insertChatQuery            = `INSERT INTO chat_logs (sessionid, chatid, chatinput, timestamp, role, emergency, universityid) VALUES ($1, $2, $3, $4, $5, $6, $7)`
+	insertChatQuery            = `INSERT INTO chat_logs (sessionid, chatinput, timestamp, role, emergency, universityid) VALUES ($1, $2, $3, $4, $5, $6)`
+	insertAIChatQuery          = `INSERT INTO chat_logs (sessionid, chatinput, timestamp, role, emergency, universityid) VALUES ($1, $2, NOW(), $3, $4, $5) RETURNING chatid`
 )
 
 func (q *Queries) SelectChatBySessionid(ctx context.Context, sessionId string) (res []model.ChatHistory, err error) {
@@ -15,6 +17,7 @@ func (q *Queries) SelectChatBySessionid(ctx context.Context, sessionId string) (
 
 	// Scan(&res.Role, &res.ChatInput)
 	if err != nil {
+		fmt.Printf("error scanning: %s\n", err.Error())
 		return []model.ChatHistory{}, err
 	}
 	defer rows.Close()
@@ -25,6 +28,7 @@ func (q *Queries) SelectChatBySessionid(ctx context.Context, sessionId string) (
 	for rows.Next() {
 		var chat model.ChatHistory
 		if err := rows.Scan(&chat.Role, &chat.ChatInput); err != nil {
+			fmt.Printf("error iteration saving: %s\n", err.Error())
 			return chats, err
 		}
 		chats = append(chats, chat)
@@ -35,10 +39,11 @@ func (q *Queries) SelectChatBySessionid(ctx context.Context, sessionId string) (
 	return chats, nil
 }
 
-func (q *Queries) InsertChat(ctx context.Context, userLog model.ChatLogs, aiLog model.ChatLogs) (err error) {
+func (q *Queries) InsertChat(ctx context.Context, userLog model.ChatLogs, aiLog model.ChatLogs) (chatID string, err error) {
 	tx, err := q.db.BeginTx(ctx, nil)
 	if err != nil {
-		return err
+		fmt.Printf("tx error: %s\n", err.Error())
+		return "", err
 	}
 
 	// Rollback on panic or error
@@ -58,7 +63,6 @@ func (q *Queries) InsertChat(ctx context.Context, userLog model.ChatLogs, aiLog 
 		ctx,
 		insertChatQuery,
 		userLog.SessionID,
-		userLog.ChatID,
 		userLog.ChatInput,
 		userLog.Timestamp,
 		userLog.Role,
@@ -66,24 +70,25 @@ func (q *Queries) InsertChat(ctx context.Context, userLog model.ChatLogs, aiLog 
 		userLog.UniversityID,
 	)
 	if err != nil {
-		return err
+		fmt.Printf("user exec error: %s\n", err.Error())
+		return "", err
 	}
 
-	// Insert AI chat
-	_, err = tx.ExecContext(
+	var chatId string
+	err = tx.QueryRowContext(
 		ctx,
-		insertChatQuery,
+		insertAIChatQuery,
 		aiLog.SessionID,
-		aiLog.ChatID,
 		aiLog.ChatInput,
-		aiLog.Timestamp,
 		aiLog.Role,
 		aiLog.Emergency,
 		aiLog.UniversityID,
-	)
+	).Scan(&chatId)
+
 	if err != nil {
-		return err
+		return "", err
 	}
 
-	return nil
+	return chatId, nil
+
 }

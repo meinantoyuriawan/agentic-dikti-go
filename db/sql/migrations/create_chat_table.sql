@@ -1,5 +1,5 @@
 CREATE TABLE chat_logs (
-    chatid         BIGSERIAL PRIMARY KEY,
+    chatid        UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     sessionid      UUID NOT NULL,
     role            VARCHAR(10) NOT NULL,        -- e.g., 'user', 'assistant', etc.
     chatinput      TEXT NOT NULL,

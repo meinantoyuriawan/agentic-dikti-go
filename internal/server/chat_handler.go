@@ -6,15 +6,14 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 	"time"
-
-	"github.com/google/uuid"
 )
 
-func generateDeterministicUUID(sessionId, userMessage string) string {
-	data := fmt.Sprintf(`%s-%s-%s`, sessionId, userMessage, time.Now().UTC().Unix())
-	return uuid.NewSHA1(uuid.NameSpaceURL, []byte(data)).String()
-}
+// func generateDeterministicUUID(sessionId, userMessage string) string {
+// 	data := fmt.Sprintf(`%s-%s-%s`, sessionId, userMessage, time.Now().UTC().Unix())
+// 	return uuid.NewSHA1(uuid.NameSpaceURL, []byte(data)).String()
+// }
 
 func (s *Server) chatHandler(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
@@ -44,7 +43,7 @@ func (s *Server) chatHandler(w http.ResponseWriter, r *http.Request) {
 	// call InputChat
 
 	// implementation
-
+	timestamp := time.Now().UTC()
 	chat, err := s.service.GetChatHistory(ctx, req.SessionId)
 	if err != nil {
 		log.Printf("error getting chat history: %s\n", err.Error())
@@ -69,26 +68,33 @@ func (s *Server) chatHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	userChat := model.ChatLogs{
-		// req.SessionId,
-		// generateDeterministicUUID(req.SessionId, req.ChatInput),
-		// req.ChatInput,
-		// "timestamp",
-		// "user",
-		// false,
-		// req.UniversityId,
-	}
-	aiChat := model.ChatLogs{
-		// req.SessionId,
-		// generateDeterministicUUID(req.SessionId, agentResponse),
-		// agentResponse,
-		// "timestamp",
-		// "ai",
-		// false,
-		// req.UniversityId,
+	uniId, err := strconv.Atoi(req.UniversityId)
+	if err != nil {
+		log.Println("invalid chat request")
+		sendErrorResponse(w, http.StatusBadRequest, "Terjadi kesalahan, Mohon input ulang")
+		return
 	}
 
-	err = s.service.InputChat(ctx, userChat, aiChat)
+	userChat := model.ChatLogs{
+		SessionID: req.SessionId,
+		// ChatID:       generateDeterministicUUID(req.SessionId, req.ChatInput),
+		ChatInput:    req.ChatInput,
+		Timestamp:    timestamp,
+		Role:         "user",
+		Emergency:    false,
+		UniversityID: uniId,
+	}
+	aiChat := model.ChatLogs{
+		SessionID: req.SessionId,
+		// ChatID:       generateDeterministicUUID(req.SessionId, agentResponse),
+		ChatInput:    agentResponse,
+		Timestamp:    timestamp,
+		Role:         "ai",
+		Emergency:    false,
+		UniversityID: uniId,
+	}
+
+	chatId, err := s.service.InputChat(ctx, userChat, aiChat)
 	if err != nil {
 		log.Printf("error saving chat: %s\n", err.Error())
 		sendErrorResponse(w, http.StatusInternalServerError, "Terjadi kesalahan, Mohon input ulang")
@@ -98,9 +104,9 @@ func (s *Server) chatHandler(w http.ResponseWriter, r *http.Request) {
 	//agent calling
 	resp := DiktiResponse{
 		SessionId:    req.SessionId,
-		ChatId:       "chatIDFromService",
-		ChatInput:    "chatInputFromAgent",
-		Timestamp:    "timestamp from service layer",
+		ChatId:       chatId,
+		ChatInput:    agentResponse,
+		Timestamp:    timestamp.String(),
 		Role:         "ai",
 		Emergency:    false,
 		UniversityId: req.UniversityId,
