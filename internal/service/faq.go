@@ -1,0 +1,534 @@
+package service
+
+var faq_text = `Nomor telepon yang dapat dihubungi saat keadaan darurat. Nomor darurat pemadam kebakaran.
+
+Berikan nomor berikut saat berada dalam keadaan darurat. Berikut adalah nomor pemadam kebakaran: 113 atau 1131
+
+Komunitas anti-bullying dan kekerasan seksual atau lembaga swadaya untuk memangani anti-bullying dan kekerasan seksual
+
+Berikut 3 komunitas/LSM di wilayah Jabodetabek yang aktif menangani isu anti-bullying dan/atau kekerasan (termasuk kekerasan seksual) - bisa dijadikan rujukan untuk kolaborasi atau pendampingan:
+
+| Wilayah                                    | Lembaga / Komunitas                                                                                  | Fokus & Informasi Relevan                                                                                                                                                                                                                                            |
+|--------------------------------------------|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Kota Tangerang  (Banten)                   | Putas Pelayanan  Terpadu  Pemberdayaan  Perempuan dan Anak  Kota Tangerang  (P2TP2a Kota  Tangerang) | Lembaga yang menyediakan layanan  pengaduan, pendampingan untuk korban  perempuan dan anak di Kota Tangerang.  (tangerangkota.go.id) Mereka juga memiliki  satgas PPA di tiapo kecamatan untuk  melaporkan kekerasan terhadap  anak/perempuan. (tangerangkota.go.id) |
+| Kota Tangerang  Selatan (Tangsel,  Banten) | UPTD PPA Kota  Tangerang Selatan  (Unit Pelaksana Teknis  Perlindungan  Perempuan & Anak)            | Diketahui bahwa Kota Tangerang Selatan  telah membentuk tim khusus untuk bullying  dan kekerasan seksual di sekolah.  (tangerangnews.com)                                                                                                                            |
+| Kabupaten/Kota  Bekasi (Jawa  Barat)       | Komisi Perlindungan  Anak Daerah  Kabupaten Bekasi  (KPAD Kab. Bekasi)                               | Ampuh dalam kegiatan sosialisasi  stop-bullying dan pencegahan kekerasan  seksual anak di sekolah-sekolah berbagai  kecamatan. (Bengkulu Governor's Office)                                                                                                          |
+| Kota Depok (Jawa  Barat)                   | UPTD PPA Kota Depok  (Unit Pelaksana Teknis  Perlindungan  Perempuan & Anak)                         | Layanan pengaduan melalui hotline /  WhatsApp (0811186598) bagi kasus  kekerasan perempuan & anak. (Megapolitan  Antara News) Juga data bahwa mayortis  kasus adalah kekerasan seksual anak.  (ruzkaindonesia.id)                                                    |
+
+## Teknik pertolongan pertama psikologis untuk orang yang ingin bunuh diri sebagai pendamping/rekan
+
+-  Tujuan Utama P3
+
+Pertolongan Pertama Psikologis (Psychological First Aid / PFA) bertujuan untuk:
+
+- · Memberikan rasa aman, didengar, dan tidak dihakimi pada korban dalam kondisi krisis.
+
+## Tanda Bahaya Bunuh Diri
+
+Penting mengenali tanda-tanda berikut agar segera intervensi:
+
+- · Ucapan langsung: "Aku pengin muti", "Hidup kayaknya nggak ada gunanya."
+- · Ucapan tidak langsung: "Kalau aku pogak ada, kalian pggak akan peduli juga."
+- · Perubahan drastis: menarik diri, berhenti makan, menulis pesan perpisahan.
+- · Memberi barang-barang berharga atau berpamitan.
+
+Jika dua atau lebih tanda muncul, perlakukan sebagai situasi duratur psikologis.
+
+## Teknik Komunikasi yang Dianjurkan
+
+## Yang Dilakukan
+
+Hindari Melakukan
+
+Dengarkan dengan empati ("Kamu berharga, aku di sini untukmu.")
+
+Bertanya dengan lembut ("Apakah kamu pernah berpikir untuk menyakiti diri?")
+
+Yakinkan bahwa perasaan mereka bisa ditangani dengan bantuan.
+
+Tetap tenang dan jaga kontak visual.
+
+Menghakimi ("Kamu harus kuat dong.")
+
+Takut membahas bunuh diri (karena membicarakannya tidak membuat orang jadi ingin melakukannya)
+
+Menyepelekan perasaan ("Ah, cuma dibully aja segiti doong.")
+
+Menunjukkan panik atau marah.
+
+## Hengkak Tindak Lanjut
+
+- 1. Pastikan keselamatan fisik terlebih dahulu. Jika korban berisiko segera melakukan tindakan, hubuni 119, polisi, atau layanan daruat.
+- 2. Dampingi hingga bantuan profesional tiba. Jangan tinggalkan korban sendirian.
+- 3. Laporkan ke pihak terkait (guru BK, orang tua, lembaga sekolah) dengan menjaga kerahasiaan sensitif.
+- 4. Dukung jangka panjang: bantu korban membangun jejaring sosial positif, kelompok dukungan, atau komunitas anti-bullying.
+
+## Teknik pertolongan pertama psikologis untuk orang yang ingin bunuh diri sebagai korban
+
+## 1. Sadari bahwa kamu sedang terluka, bukan lemah
+
+- Rasa sakit karena dirundung (diejek, dipermalukan, diserang di media sosial, dikucilkan) adalah luka psikologis nyata , bukan sekadar "baper".
+- Pikiran ingin mati atau menghilang sering muncul karena kamu ingin mengakhiri rasa sakit, bukan karena kamu benar-benar ingin tiada .
+- Langkah pertama: Akui pada diri sendiri, "Aku sedang butuh pertolongan dan itu tidak apa-apa."
+- 2. Amankan diri dari hal-hal berbahaya
+
+"Aku sedang benar-benar lelah karena bullying, dan aku buutuh seseorang untuk dengarkan."
+
+- · Tidak perlu menceritakan semua detail sekaligus. Cukup mulai dari bagaimana perasaanmu hari ini.
+- · Jika takut bicara langsung, tuliskan dulu di catatan atau pesan teks.
+
+## 4. Hubunggi bantuan profesional atau layanan darurat
+
+- · Hotline Kemenkes 119 ext 8 - bisa telepon gratis kapan pun jika kamu berikir untuk menyakiti diri.
+- · Layanan konseling gratis:
+- o Sehat Jiwa (SehatPedia) - aplikasi resmi Kemenkes
+- o Into the Light Indonesia - komunitas pencegahan bunuh diri
+- o P2TP2A / UPTD PPA kota/kabupaten - jika bullying melibatkan kekerasan atau pelecehan
+- · Jika kamu berada di sekolah atau kampus, cari guru BK, psikolog, atau unit konseling - mereka terlath menangani situasi ini dengan rahasia.
+- 5. Rawat diri pelan-pelan
+
+Langkah kecil tetap berarti:
+
+- · Makan dan minimum cukup (tubuh yang lelah memperberat pikiran).
+- · Tidur cukup, atau kalau sulit tidur, dengarkan musik tenang atau meditasi pendek.
+
+## 6. Ingat: Rasa sakit ini bisa berlalu
+
+- · Kamu tidak sendirian. Banyak orang pernah berada di titik ini dan akhirnya pulih.
+- · Luka karena bullying butuh waktu, tapi bisa disembuhkan dengan dukungan dan langkah-langkah kecil.
+- · Jika kamu ragu, ulangi kalimat ini:
+
+"Aku tidak harus menyerah hari ini. Aku hanya perlu bertahan satu hari lagi."
+
+Panduan relaksasi jika sedang mengalami serangan panik (untuk diri sendiri maupun untuk memandu teman)
+
+- 6.1. Atur Napas (Teknik 4-4-4-4)
+- · Tarik napas perlahan lewat hidung selama 4 detik.
+- · Tahan napas selama 4 detik.
+- · Hembuskan perlahan lewat mulut selama 4 detik.
+- · Tahan kembali 4 detik sebelum menarik napas lagi.
+- · Ulangi 5-6 kali hingga detak jantung mulai stabil.
+
+## 2. Grounding (Teknik 5-4-3-2-1)
+
+Fokuskan perhatian pada dunia nyata di sekitarmu:
+
+- · 5 hal yang bisa kamu lihat.
+- · 4 hal yang bisa kamu sentuh.
+- · 3 hal yang bisa kamu dengar.
+- · 2 hal yang bisa kamu cium.
+- · 1 hal yang bisa kamu rasakan (misalnya udara di kulitmu).
+
+Tujuannya: mengalihkan fokus dari kepanikan ke realitas saat ini.
+
+## 4. Ucapkan Kalimat Penenang
+
+Katakan perlahan pada diri sendiri:
+
+- · "Serangan ini tidak berbahaya, hanya sementara."
+- · "Aku tetap bisa mengendalikan napasku."
+- · "Tubuhku sedang bereaksi karena stres, tapi aku akan tenang kembali."
+
+Ulangi seperti mantra dengan napas yang stabil.
+
+## 5. Gunakan Bantuan Sensorik
+
+- · Minimum air perlahan.
+- · Pegang benda dengan tekstur (misalnya batu kecil atau kain lembut).
+- · Percikkan sedikit air dingin ke wajah.
+
+Hal-hal kecil ini membantu tubuh "kembali" ke saat ini.
+
+## 6. Setelah Mereda
+
+- · Duduk atau rebahan sebetar, biarkan tubuh pulih.
+- · Catat apa yang memicu serangan dan apa yang membantu menenangkan.
+- · Jika serangan sering berulang, segera konsultasi dengan psikolog atau psikater.
+
+## Teknik pertolongan pertama sebagai korban bullying
+
+Berikut panduan "Pertolongan Pertama untuk Diri Sendiri Saat Mengalami Bullying", disusun berdasarkan tingkat keparahan (level 1-10) dan dibagi ke dalam langkah-langkah praktis yang bisa langsung dilakukan.
+
+## LEVEL 1-4: Bullying ringan (verbal / sosial ringan)
+
+- · Tujuan: Jaga ketenangan diri dan jangan biarkan ejekan tumbuh menjadi luka batin.
+- · Contoh:
+- o Diejek soal penampilan, logat, atau nilai.
+- o Dikeluarkan dari grup pertemanan.
+- o Digosipkan atau dikomentari secara tidak menyenangkan di media sosial.
+- · Pertolongan pertama
+- o Tarik napas dan sadar periasaanmu.
+
+Jangan langsung melawan atau membalas. Akui dulu:
+
+"Aku merasa sakit hati. Tapi aku tetap berharga."
+
+- o Pisahkan fakta dan opini.
+
+Kata orang lain bukan cerminan nilai dirimu
+
+- → Coba tulis di kertas: "Yang mereka bilang: ___ Tapi faktanya: ___"
+- o Cari teman aman.
+
+Ceritakan pada orang yang kamu percaya - sahabat, guru, atau keluarga.
+
+Jangan hadapi sendirian.
+
+Atau jika kamu merasa tidak memiliki teman yang dapat kamu percara, kamu dapat mencari komunitas yang membuatmu merasa diterima dan aman untuk menceritakan kecemasanmu
+
+- o Jauhkan diri dari lingkungan toxic .
+
+Mute grup chat, block akun yang melecehkan, atau ambil jeda media sosial sejenak.
+
+## LEVEL 5-7: Bullying sedang (fisik ringan / emosional berat)
+
+- · Tujuan: Lindungi diri secara fisik, jaga kestabilan emosi, dan segera cari bantuan.
+- · Contoh:
+- o Didorong, dinitmidasi, atau diancam tanpa luka sesur.
+- o Dihina berulang di depan umum.
+- o Ditor atau dipermalukan di media sosial.
+- · Pertolongan pertama
+- o Segera keluar dari lokasi.
+
+Jangan coba "melawan balik" kalau situasi tidak aman.
+
+Prioritas: keselamatan, bukan pembuktian.
+
+- o Cari tempat aman &amp; tenang.
+
+Misalnya: ruang guru, toilet, UKS, atau tempat ramai.
+
+Guru, konselor, orangtua, psikolog, atau hotline anti-bullying. Jika tidak nyaman bicara langsung, tulis pesan atau surat.
+
+- o Tuliskan atau simpan bukti.
+
+Catat apa yang terjadi: waktu, lokasi, pelaku, saksi.
+
+Simpan chat, foto, atau video (jangan dibagikan ke publik).
+
+- o Atur napas dan tenangkan diri.
+
+Teknik sederhana: tarik napas 4 detik - tahun 4 detik - buang 4 detik. Ini membantu menurunkan reaksi panik atau gemetar.
+
+- o LEVEL 8-10: Bullying berat / mengarah ke kriminal
+- · Tujuan: Lindungi nyaawa, hindari trauma lebih lanjut, dan laporkan ke pihak berwenang.
+- · Contoh:
+- o Dipukul, ditendang, disakiti secara fisik.
+- o Dipaksa melakukan sesuatu (termasuk pelecehan seksual).
+- o Diancam atau disebarkan foto/video pribadi.
+- o Dintimidasih hingga merasa ingin melukai diri sendiri.
+- · Pertolongan pertama
+- o Segera pergi ke tempat aman.
+
+Jika perlu, minta tolong orang terdekat di sekitar (guru, satpam, teman).
+
+- o Jangan diam. Laporkan segera.
+
+Ini bukan "masalah kecil" - kamu berhak dilindungi.
+
+Hubungi:
+
+- - Guru / konselor sekolah
+- - Orang tua / wali
+- - Hotline:
+
+KemenPPPA 129
+
+SAHABAT ANAK - 1500-771
+
+Laporgao id
+
+- o Jangan hasu bukti digital.
+
+Simpan chat, tangkapan layar, atau rekaman jika aman dilakukan.
+
+- o Minta pendampingan psikolog.
+
+Luka emosional butuh penanganan profesional, bukan sekadar "move on".
+
+Kamu tidak lemah karena butuh bantuan - kamu sedang menyembuhkan diri.
+
+## o Beristirahat dan rawat diri.
+
+Tidur cukup, makan baik, hindari media sosial sementara waktu. Fokus dulu ke pemulihan diri.
+
+## Teknik pertolongan pertama sebagai teman/bystanders untuk orang lain yang mengalami bullying (perundungan)
+
+- o LEVEL 1-4: Bullying ringan (verbal / sosial ringan)
+- · Tujuan: Menunjukkan keberpihakan dan menghentikan pola kecil sebelum berkembang.
+- · Contoh:
+- o Dilecehkan secara verbal ringan: "Ih, kamu aneh banget sih."
+- o Diejek karena penampilan, logat, atau kebiasaan.
+- o Dikeluarkan dari grup chat / permainan / lingkaran teman.
+- o Digosipkan secara pasif (bullying sosial ringan).
+- · Pertolongan pertama:
+- o Alihkan atau hentikan dengan ringan tapi tegas.
+- "Nggak lucu loh kalu ngong mongok gak itu."
+- "Udah ah, jangan bahas orang terus."
+- o Tunjukkan dukungan ke korban.
+- Duduk bareng, ajak ngobrol, atau temani di lingkungan sosialnya.
+- o Beritahu korban bahwa dia tidak salah.
+- "Kamu nggak perlu dengerin omongan kayak gitu."
+- o Laporkan jika pola ini berulang.
+- Catat kejadian, walau terlihat sepele.
+
+## o LEVEL 5-7: Bullying sedang (fisik tanpa alat / ancaman emosional berat)
+
+- · Tujuan: Intervensi dengan aman, jaga keselamatan korban dan diri.
+- · Contoh:
+- o Dorongan, cubitan, atau dijegal tanpa luka serius.
+- o Diteriaki, diintimidasi, atau diancam di depan umum.
+- o Dihujat berulang di media sosial (cyberbullying).
+- o Dihina atau dikucilkan secara sistematis.
+- · Pertolongan pertama:
+- o Jangan konfrontasi langsung jika pelaku agresif.
+
+Lebih baik datangi korban dan bawa pergi dari situasi.
+
+"Ayo, kita ke kantin dulu."
+
+Hubuni guru piket, satpam, konselor, atau orang dewasa yang dipercaya.
+
+- o Validasi perasaan korban.
+
+"Aku tahu tadi nggak enak banget. Kamu nggak sendirian."
+
+- o Laporkan dengan bukti.
+
+Jika ada chat, foto, atau video, bantu korban menyimpannya.
+
+- o Pantau setelah kejadian.
+
+Cek keadaan korban di hari berikiutnya - banyak yang baru merasa dampaknya setelahnya.
+
+- o LEVEL 8-10: Bullying berat / mengarah ke kriminal
+- · Tujuan: Lindungi nyaa dan keselamatan. Ini bukan lagi "masalah antar teman" - ini darurat.
+- · Contoh:
+- o Pemukulan, penendangan, atau penggunaan benda sebagai senjata.
+- o Pelecehan seksual, pemaksaan fisik, ancaman kekerasan atau pembunuhan.
+- o Penyebaran foto/video pribadi tanpa izin.
+- o Pemerasan atau ancaman publik di media sosial.
+- · Pertolongan pertama:
+- o Prioritaskaan keselamatan diri dan korban.
+
+Jangan coba melerai sendiri - cari bantuan segera.
+
+Hubuni guru, keamanan, atau polisi jika di luar kendali.
+
+Jika di sekolah: aktifkan sistem darurat atau panggil orang dewasa terdekat.
+
+- o Pindahkan korban ke tempat aman.
+
+Jika bisa, bawa korban menjauh dari pelaku, cari tempat ramai atau aman.
+
+- o Catat atau dokumentasikan dengan hati-hati.
+
+Jangan sebarkan, tapi simpan untuk bukti resmi.
+
+- o Laporkan ke pihak berwenang.
+
+Ini sudah masuk ranah hukum. Bantu korban melapor atau dampingi dia.
+
+- o Dukung pemulihan psikologis.
+
+Dorong korban untuk menemui psikolog / konselor profesional.
+
+"Kamu berhak dilindungi. Yuk, kita cari bantuan bareng."
+
+## Informasi manajemen kampus
+
+Berikut adalah info manajemen kampus terkait dengan penanganan perundungan.
+
+Tingkatan
+
+Unit / Jabatan
+
+Peran &amp;
+
+Tanggung
+
+Jawab
+
+1) Layanan
+
+Tim Respons
+
+Darurat /
+
+Anti-Bullying
+
+Hotline
+
+(TRAB)
+
+Kampus
+
+(
+
+Menangani
+
+laporan awal,
+
+melakukan
+
+assemen risiko,
+
+dan memberi
+
+pertolongan
+
+pertama
+
+psikologis.
+
+2 Unit
+
+Konselor /
+
+Psikolog
+
+Konseling &amp;
+
+Kesejahteraan
+
+kampus
+
+psikologis
+
+rahasia, sesi
+
+(UKKM)
+
+konseling, dan
+
+rujukan
+
+professional
+
+eksternal jika
+
+dibutuhkan.
+
+3 Unit Etika &amp;
+
+Wakil Dekan
+
+Bidang
+
+Kemahasiswa
+
+/ Kepala BEM
+
+Melakukan
+
+investigasi
+
+internal,
+
+memediasi
+
+antara pihak
+
+terkait, dan
+
+menegakkan
+
+sanksi sesuai
+
+kode etik
+
+kampus.
+
+Sistem
+
+SafeSpeak
+
+Portal
+
+Bagi pelapor
+
+yang ingin tetap
+
+anonim. Formulir
+
+daring terenkripsi
+
+dan tanpa
+
+keharusan login.
+
+rujukan
+
+professional
+
+eksternal jika
+
+dibutuhkan.
+
+Melakukan
+
+investigasi
+
+internal,
+
+memediasi
+
+antara pihak
+
+terkait, dan
+
+menegakkan
+
+sanksi sesuai
+
+kode etik
+
+kampus.
+
+Bagi pelapor
+
+yang ingin tetap
+
+anonim. Formulir
+
+daring terenkripsi
+
+dan tanpa
+
+keharusan login.
+
+Kontak
+
+0812-1234-5678 (WhatsApp &amp; trab@kampus.ac.id 2 4 jam
+
+5 Unit
+
+Petugas
+
+Menangani
+
+021-555-9911 (pos satpam
+
+Keamanan
+
+keamanan &amp;
+
+insiden fisik
+
+tanggap darurat
+
+langsung atau
+
+Kampus
+
+(Campus
+
+Security)
+
+ancaman
+
+kekerasan di
+
+area kampus.
+
+## Informasi Jadwal Psikolog`

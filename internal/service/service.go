@@ -3,10 +3,13 @@ package service
 import (
 	"AgenticDikti/internal/model"
 	"context"
+
+	"github.com/tmc/langchaingo/agents"
 )
 
 type Service struct {
 	repository Repository
+	agent      *agents.OpenAIFunctionsAgent
 }
 
 type Repository interface {
@@ -17,7 +20,12 @@ type Repository interface {
 }
 
 func New(repository Repository) *Service {
+	agent, err := initAgent(repository)
+	if err != nil {
+		panic(err)
+	}
 	return &Service{
 		repository: repository,
+		agent:      agent,
 	}
 }

@@ -7,7 +7,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"os"
 )
 
 // load faq
@@ -22,10 +21,12 @@ func (w GeneralFAQ) Description() string {
 }
 
 func (w GeneralFAQ) Call(ctx context.Context, input string) (string, error) {
-	content, err := os.ReadFile("internal/service/faq.txt")
-	if err != nil {
-		return "", err
-	}
+	// content, err := os.ReadFile("internal/service/faq.txt")
+	// if err != nil {
+	// 	return "", err
+	// }
+
+	content := faq_text
 
 	// Return clean text, NOT bytes or numbers
 	return string(content), nil
@@ -33,7 +34,7 @@ func (w GeneralFAQ) Call(ctx context.Context, input string) (string, error) {
 
 // get jadwal psikolog
 type PsychSchedule struct {
-	service *Service
+	repo Repository
 }
 
 func (w PsychSchedule) Name() string {
@@ -48,7 +49,7 @@ func (w PsychSchedule) Call(ctx context.Context, input string) (string, error) {
 	// function to call repository
 
 	fmt.Println("schedule psy called")
-	schedules, err := w.service.repository.SelectJadwalPsikolog(ctx)
+	schedules, err := w.repo.SelectJadwalPsikolog(ctx)
 	if err != nil {
 		return "", constants.ErrBooking
 	}
@@ -84,7 +85,7 @@ func ToJadwalPsikologResponse(data []model.JadwalPsikolog) []model.JadwalPsikolo
 
 // book psikolog
 type BookPsychologist struct {
-	service *Service
+	repo Repository
 }
 
 func (w BookPsychologist) Name() string {
@@ -105,7 +106,7 @@ func (w BookPsychologist) Call(ctx context.Context, input string) (string, error
 		return "", fmt.Errorf("invalid input format: %w", err)
 	}
 
-	err := w.service.repository.InsertBooking(ctx, booking)
+	err := w.repo.InsertBooking(ctx, booking)
 	if err != nil {
 		return "", constants.ErrBooking
 	}
